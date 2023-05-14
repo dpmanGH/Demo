@@ -1,0 +1,27 @@
+﻿@page
+@model Demo.Pages.Operation.mulModel
+@{
+}
+
+<h1>Welcome to Folder Mul Page</h1>
+
+@if (Model.isok)
+{
+    string a = Model.a, b = Model.b;
+    int A = int.Parse(a), B = int.Parse(b);
+    <p>The sum of @a and @b is : @(A * B)</p>
+    <a class="btn btn-primary btn-md" href="/Operation/mul">ReStart</a>
+}
+@if (Model.isok == false)
+{
+    <form method="POST">
+        <label>Enter Number A</label> <br>
+        <input type="text" name="a" required> <br>
+
+        <label>Enter Number B</label> <br>
+        <input type="text" name="b" required> <br><br>
+
+        <button class="btn btn-primary btn-md">Submit</button>
+
+    </form>
+}
